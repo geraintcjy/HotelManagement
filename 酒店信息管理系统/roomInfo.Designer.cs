@@ -1,4 +1,5 @@
-﻿namespace 酒店信息管理系统
+﻿using System.Data.SqlClient;
+namespace 酒店信息管理系统
 {
     partial class roomInfo
     {
@@ -122,7 +123,6 @@
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
-
         }
 
         #endregion

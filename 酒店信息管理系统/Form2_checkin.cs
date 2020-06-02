@@ -13,9 +13,23 @@ namespace 酒店信息管理系统
 {
     public partial class Form2_checkin : Form
     {
+        //写placeholder!!!
         static string con = @"Data Source=.\sqlexpress;Initial Catalog=Hotel;Integrated Security=True";
         SqlConnection HotelCon = new SqlConnection(con);
         DataSet dataset = new DataSet();
+
+        public void clearAll()
+        {
+            foreach (Control C in Controls)
+            {
+                if (C is ComboBox || C is TextBox)
+                    C.Text = "";
+                else if (C is GroupBox)
+                    foreach (Control C1 in C.Controls)
+                        if (C1 is ComboBox || C1 is TextBox)
+                            C1.Text = "";
+            }
+        }
         public Form2_checkin()
         {
             InitializeComponent();
@@ -34,9 +48,11 @@ namespace 酒店信息管理系统
                 SqlDataAdapter adapter = new SqlDataAdapter(query1, HotelCon);
                 dataset.Clear();
                 adapter.Fill(dataset, "table0");
-                int temp = comboBox2.Items.IndexOf(dataset.Tables["table0"].Rows[0][0].ToString());
-                if (temp >= 0)
+                if (dataset.Tables["table0"].Rows.Count > 0) 
+                {
+                    int temp = comboBox2.Items.IndexOf(dataset.Tables["table0"].Rows[0][0].ToString());
                     comboBox2.Text = comboBox2.Items[temp].ToString();
+                }
             }
         }
 
@@ -62,14 +78,35 @@ namespace 酒店信息管理系统
 
         private void button2_Click(object sender, EventArgs e)
         {
-            foreach (Control C in Controls)
+            clearAll();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (textBox2.Text==""|| textBox1.Text == "" || textBox5.Text == "" || textBox4.Text == "" || textBox8.Text == "")
             {
-                if (C is ComboBox || C is TextBox)
-                    C.Text = "";
-                else if (C is GroupBox)
-                    foreach (Control C1 in C.Controls)
-                        if (C1 is ComboBox || C1 is TextBox)
-                            C1.Text = "";
+                MessageBox.Show("请输入必填信息", "警告");
+                return;
+            }
+            roomInfo ri = new roomInfo();
+            if (!ri.roomStatus.ContainsKey(textBox3.Text))
+            {
+                MessageBox.Show("输入的房号有误或房间不可用","警告");
+                clearAll();
+                return;
+            }
+            string query1 = "insert into guestInfo values (" + textBox2.Text + "," + textBox1.Text + "," + comboBox1.Text + "," + textBox8.Text + ")";
+        }
+
+        private void textBox7_Enter(object sender, EventArgs e)
+        {
+            if (textBox5.Text=="")
+                MessageBox.Show("请输入预期入住天数", "警告");
+            else if (textBox4.Text == "")
+                MessageBox.Show("请输入房间单价", "警告");
+            else
+            {
+                textBox6.Text = (Convert.ToInt32(textBox5.Text) * Convert.ToInt32(textBox4.Text) / 2).ToString();
             }
         }
     }
