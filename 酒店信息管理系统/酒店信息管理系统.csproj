@@ -44,6 +44,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="checkinConfirm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="checkinConfirm.Designer.cs">
+      <DependentUpon>checkinConfirm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1_home.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -112,6 +118,9 @@
     <Compile Include="roomInfo.Designer.cs">
       <DependentUpon>roomInfo.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="checkinConfirm.resx">
+      <DependentUpon>checkinConfirm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1_home.resx">
       <DependentUpon>Form1_home.cs</DependentUpon>
     </EmbeddedResource>

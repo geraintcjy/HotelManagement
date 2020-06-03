@@ -34,3 +34,4 @@ D:\大三下课件\数据库\HotelManagement\酒店信息管理系统\酒店信�
 D:\大三下课件\数据库\HotelManagement\酒店信息管理系统\酒店信息管理系统\obj\Debug\酒店信息管理系统.exe
 D:\大三下课件\数据库\HotelManagement\酒店信息管理系统\酒店信息管理系统\obj\Debug\酒店信息管理系统.pdb
 D:\大三下课件\数据库\HotelManagement\酒店信息管理系统\酒店信息管理系统\obj\Debug\酒店信息管理系统.roomInfo.resources
+D:\大三下课件\数据库\HotelManagement\酒店信息管理系统\酒店信息管理系统\obj\Debug\酒店信息管理系统.checkinConfirm.resources

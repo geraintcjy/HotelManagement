@@ -65,21 +65,6 @@ namespace 酒店信息管理系统
             textBox4.Text = dataset.Tables["table1"].Rows[0][0].ToString();
         }
 
-        private void button4_Click(object sender, EventArgs e)
-        {
-            roomInfo r = new roomInfo();
-            r.ShowDialog();
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            clearAll();
-        }
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -95,7 +80,8 @@ namespace 酒店信息管理系统
                 clearAll();
                 return;
             }
-            string query1 = "insert into guestInfo values (" + textBox2.Text + "," + textBox1.Text + "," + comboBox1.Text + "," + textBox8.Text + ")";
+            checkinConfirm cc = new checkinConfirm(this);
+            cc.ShowDialog();
         }
 
         private void textBox7_Enter(object sender, EventArgs e)
@@ -108,6 +94,22 @@ namespace 酒店信息管理系统
             {
                 textBox6.Text = (Convert.ToInt32(textBox5.Text) * Convert.ToInt32(textBox4.Text) / 2).ToString();
             }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            clearAll();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            roomInfo r = new roomInfo();
+            r.Show();
         }
     }
 }

@@ -75,28 +75,28 @@ namespace 酒店信息管理系统
             // 单人间ToolStripMenuItem
             // 
             this.单人间ToolStripMenuItem.Name = "单人间ToolStripMenuItem";
-            this.单人间ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.单人间ToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
             this.单人间ToolStripMenuItem.Text = "单人间";
             this.单人间ToolStripMenuItem.Click += new System.EventHandler(this.单人间ToolStripMenuItem_Click);
             // 
             // 双人间ToolStripMenuItem
             // 
             this.双人间ToolStripMenuItem.Name = "双人间ToolStripMenuItem";
-            this.双人间ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.双人间ToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
             this.双人间ToolStripMenuItem.Text = "双人间";
             this.双人间ToolStripMenuItem.Click += new System.EventHandler(this.双人间ToolStripMenuItem_Click);
             // 
             // 大床房ToolStripMenuItem
             // 
             this.大床房ToolStripMenuItem.Name = "大床房ToolStripMenuItem";
-            this.大床房ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.大床房ToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
             this.大床房ToolStripMenuItem.Text = "大床房";
             this.大床房ToolStripMenuItem.Click += new System.EventHandler(this.大床房ToolStripMenuItem_Click);
             // 
             // 亲子房ToolStripMenuItem
             // 
             this.亲子房ToolStripMenuItem.Name = "亲子房ToolStripMenuItem";
-            this.亲子房ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.亲子房ToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
             this.亲子房ToolStripMenuItem.Text = "亲子房";
             this.亲子房ToolStripMenuItem.Click += new System.EventHandler(this.亲子房ToolStripMenuItem_Click);
             // 
@@ -116,13 +116,14 @@ namespace 酒店信息管理系统
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "roomInfo";
-            this.Text = "roomInfo";
+            this.Text = "房间信息";
             this.Load += new System.EventHandler(this.roomInfo_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
+
         }
 
         #endregion
