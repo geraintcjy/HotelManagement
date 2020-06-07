@@ -44,11 +44,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="adminLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="adminLogin.Designer.cs">
+      <DependentUpon>adminLogin.cs</DependentUpon>
+    </Compile>
     <Compile Include="checkinConfirm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="checkinConfirm.Designer.cs">
       <DependentUpon>checkinConfirm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forceManage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forceManage.Designer.cs">
+      <DependentUpon>forceManage.cs</DependentUpon>
     </Compile>
     <Compile Include="Form1_home.cs">
       <SubType>Form</SubType>
@@ -118,8 +130,14 @@
     <Compile Include="roomInfo.Designer.cs">
       <DependentUpon>roomInfo.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="adminLogin.resx">
+      <DependentUpon>adminLogin.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="checkinConfirm.resx">
       <DependentUpon>checkinConfirm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forceManage.resx">
+      <DependentUpon>forceManage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1_home.resx">
       <DependentUpon>Form1_home.cs</DependentUpon>

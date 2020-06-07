@@ -35,10 +35,6 @@ namespace 酒店信息管理系统
 
         private void 房态管理ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.panel1.Controls.Clear();
-            Form4_roomstate form4 = new Form4_roomstate { TopLevel = false, FormBorderStyle = FormBorderStyle.None };
-            this.panel1.Controls.Add(form4);
-            form4.Show();
         }
 
         private void 入住记录ToolStripMenuItem_Click(object sender, EventArgs e)
@@ -73,6 +69,19 @@ namespace 酒店信息管理系统
             form62.Show();
         }
 
-       
+        private void 强制命令ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.panel1.Controls.Clear();
+            adminLogin al = new adminLogin();
+            al.ShowDialog(this);
+        }
+
+        private void 维修检修ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.panel1.Controls.Clear();
+            Form4_roomstate form4 = new Form4_roomstate { TopLevel = false, FormBorderStyle = FormBorderStyle.None };
+            this.panel1.Controls.Add(form4);
+            form4.Show();
+        }
     }
 }

@@ -42,6 +42,8 @@
             this.房间设置ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.房价设置ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.退出系统ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.维修检修ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.强制命令ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -49,7 +51,7 @@
             // 
             this.panel1.Location = new System.Drawing.Point(12, 38);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(642, 460);
+            this.panel1.Size = new System.Drawing.Size(642, 451);
             this.panel1.TabIndex = 2;
             // 
             // toolStripMenuItem4
@@ -96,6 +98,9 @@
             // 
             // 房态管理ToolStripMenuItem
             // 
+            this.房态管理ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.维修检修ToolStripMenuItem,
+            this.强制命令ToolStripMenuItem});
             this.房态管理ToolStripMenuItem.Name = "房态管理ToolStripMenuItem";
             this.房态管理ToolStripMenuItem.Size = new System.Drawing.Size(68, 21);
             this.房态管理ToolStripMenuItem.Text = "房态管理";
@@ -153,6 +158,20 @@
             this.退出系统ToolStripMenuItem.Size = new System.Drawing.Size(68, 21);
             this.退出系统ToolStripMenuItem.Text = "退出系统";
             // 
+            // 维修检修ToolStripMenuItem
+            // 
+            this.维修检修ToolStripMenuItem.Name = "维修检修ToolStripMenuItem";
+            this.维修检修ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.维修检修ToolStripMenuItem.Text = "房态管理";
+            this.维修检修ToolStripMenuItem.Click += new System.EventHandler(this.维修检修ToolStripMenuItem_Click);
+            // 
+            // 强制命令ToolStripMenuItem
+            // 
+            this.强制命令ToolStripMenuItem.Name = "强制命令ToolStripMenuItem";
+            this.强制命令ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.强制命令ToolStripMenuItem.Text = "强制命令";
+            this.强制命令ToolStripMenuItem.Click += new System.EventHandler(this.强制命令ToolStripMenuItem_Click);
+            // 
             // Form_home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -170,8 +189,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem4;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem 首页ToolStripMenuItem;
@@ -185,6 +202,9 @@
         private System.Windows.Forms.ToolStripMenuItem 房间设置ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 房价设置ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 退出系统ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 维修检修ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 强制命令ToolStripMenuItem;
+        public System.Windows.Forms.Panel panel1;
     }
 }
 
