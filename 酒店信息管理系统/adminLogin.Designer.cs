@@ -68,6 +68,7 @@
             this.textBox2.Location = new System.Drawing.Point(131, 154);
             this.textBox2.MaxLength = 8;
             this.textBox2.Name = "textBox2";
+            this.textBox2.PasswordChar = '●';
             this.textBox2.Size = new System.Drawing.Size(100, 23);
             this.textBox2.TabIndex = 4;
             // 
@@ -116,6 +117,7 @@
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "adminLogin";
             this.Text = "管理员登录";
+            this.Load += new System.EventHandler(this.adminLogin_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

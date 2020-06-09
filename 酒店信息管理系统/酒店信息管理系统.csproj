@@ -56,6 +56,12 @@
     <Compile Include="checkinConfirm.Designer.cs">
       <DependentUpon>checkinConfirm.cs</DependentUpon>
     </Compile>
+    <Compile Include="checkoutConfirm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="checkoutConfirm.Designer.cs">
+      <DependentUpon>checkoutConfirm.cs</DependentUpon>
+    </Compile>
     <Compile Include="forceManage.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -67,6 +73,12 @@
     </Compile>
     <Compile Include="Form1_home.Designer.cs">
       <DependentUpon>Form1_home.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form3_checkout.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form3_checkout.Designer.cs">
+      <DependentUpon>Form3_checkout.cs</DependentUpon>
     </Compile>
     <Compile Include="Form5_query2.cs">
       <SubType>Form</SubType>
@@ -110,17 +122,17 @@
     <Compile Include="Form2_checkin.Designer.cs">
       <DependentUpon>Form2_checkin.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form3_checkout.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form3_checkout.Designer.cs">
-      <DependentUpon>Form3_checkout.cs</DependentUpon>
-    </Compile>
     <Compile Include="Form4_roomstate.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form4_roomstate.Designer.cs">
       <DependentUpon>Form4_roomstate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="login.Designer.cs">
+      <DependentUpon>login.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -135,6 +147,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="checkinConfirm.resx">
       <DependentUpon>checkinConfirm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="checkoutConfirm.resx">
+      <DependentUpon>checkoutConfirm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="forceManage.resx">
       <DependentUpon>forceManage.cs</DependentUpon>
@@ -165,6 +180,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form2_checkin.resx">
       <DependentUpon>Form2_checkin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="login.resx">
+      <DependentUpon>login.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

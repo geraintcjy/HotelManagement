@@ -103,6 +103,7 @@ namespace 酒店信息管理系统
             HotelCon.Close();
 
             MessageBox.Show("已完成", "成功");
+            Close();
         }
     }
 }

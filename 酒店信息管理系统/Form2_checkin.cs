@@ -58,7 +58,7 @@ namespace 酒店信息管理系统
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string query2 = "select price from typeInfo where type = '" + comboBox2.SelectedItem + "'";
+            string query2 = "select price from roomInfo where type = '" + comboBox2.SelectedItem + "'";
             SqlDataAdapter adapter = new SqlDataAdapter(query2, HotelCon);
             dataset.Clear();
             adapter.Fill(dataset, "table1");

@@ -18,5 +18,7 @@ namespace 酒店信息管理系统
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form_home());
         }
+
+        public static string currentId = "";
     }
 }

@@ -26,16 +26,11 @@ namespace 酒店信息管理系统
         {
             string update_roomInfo = "update roomInfo set state=" + (comboBox1.SelectedIndex + 1).ToString() + " where rnum = " + textBox1.Text;
             SqlCommand cmd3 = new SqlCommand(update_roomInfo, HotelCon);
-
             HotelCon.Open();
-
             cmd3.ExecuteNonQuery();
-
             HotelCon.Close();
-
             MessageBox.Show("已完成", "成功");
-
-            textBox1.Text = comboBox1.Text = textBox2.Text = "";
+            textBox1.Text = comboBox1.Text = "";
         }
     }
 }
