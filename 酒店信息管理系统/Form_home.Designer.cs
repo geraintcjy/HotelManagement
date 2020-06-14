@@ -42,18 +42,14 @@
             this.入住记录ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.往期账目ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.客房设置ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.房间设置ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.房价设置ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.退出系统ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label1 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
-            this.panel1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.button1);
             this.panel1.Location = new System.Drawing.Point(12, 73);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(642, 416);
@@ -61,9 +57,9 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(268, 168);
+            this.button1.Location = new System.Drawing.Point(441, 30);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(120, 37);
+            this.button1.Size = new System.Drawing.Size(82, 37);
             this.button1.TabIndex = 0;
             this.button1.Text = "员工登录";
             this.button1.UseVisualStyleBackColor = true;
@@ -125,14 +121,14 @@
             // 维修检修ToolStripMenuItem
             // 
             this.维修检修ToolStripMenuItem.Name = "维修检修ToolStripMenuItem";
-            this.维修检修ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.维修检修ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
             this.维修检修ToolStripMenuItem.Text = "房态还原";
             this.维修检修ToolStripMenuItem.Click += new System.EventHandler(this.维修检修ToolStripMenuItem_Click);
             // 
             // 强制命令ToolStripMenuItem
             // 
             this.强制命令ToolStripMenuItem.Name = "强制命令ToolStripMenuItem";
-            this.强制命令ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.强制命令ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
             this.强制命令ToolStripMenuItem.Text = "状态更改";
             this.强制命令ToolStripMenuItem.Click += new System.EventHandler(this.强制命令ToolStripMenuItem_Click);
             // 
@@ -161,26 +157,10 @@
             // 
             // 客房设置ToolStripMenuItem
             // 
-            this.客房设置ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.房间设置ToolStripMenuItem,
-            this.房价设置ToolStripMenuItem});
             this.客房设置ToolStripMenuItem.Name = "客房设置ToolStripMenuItem";
             this.客房设置ToolStripMenuItem.Size = new System.Drawing.Size(68, 21);
             this.客房设置ToolStripMenuItem.Text = "客房设置";
-            // 
-            // 房间设置ToolStripMenuItem
-            // 
-            this.房间设置ToolStripMenuItem.Name = "房间设置ToolStripMenuItem";
-            this.房间设置ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
-            this.房间设置ToolStripMenuItem.Text = "房间设置";
-            this.房间设置ToolStripMenuItem.Click += new System.EventHandler(this.房间设置ToolStripMenuItem_Click);
-            // 
-            // 房价设置ToolStripMenuItem
-            // 
-            this.房价设置ToolStripMenuItem.Name = "房价设置ToolStripMenuItem";
-            this.房价设置ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
-            this.房价设置ToolStripMenuItem.Text = "房价设置";
-            this.房价设置ToolStripMenuItem.Click += new System.EventHandler(this.房价设置ToolStripMenuItem_Click);
+            this.客房设置ToolStripMenuItem.Click += new System.EventHandler(this.客房设置ToolStripMenuItem_Click);
             // 
             // 退出系统ToolStripMenuItem
             // 
@@ -214,6 +194,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(666, 501);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel1);
@@ -221,7 +202,6 @@
             this.Name = "Form_home";
             this.Text = "酒店信息管理系统";
             this.Load += new System.EventHandler(this.Form_home_Load);
-            this.panel1.ResumeLayout(false);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -240,8 +220,6 @@
         private System.Windows.Forms.ToolStripMenuItem 入住记录ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 往期账目ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 客房设置ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 房间设置ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 房价设置ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 退出系统ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 维修检修ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 强制命令ToolStripMenuItem;

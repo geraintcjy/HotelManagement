@@ -76,11 +76,22 @@ namespace 酒店信息管理系统
 
         private void button1_Click(object sender, EventArgs e)
         {
+            string com1, com2;
+            if (f2.textBox9.Text != "")
+                com1 = f2.textBox10.Text;
+            else
+                com1 = "NULL";
+            if (f2.textBox10.Text != "")
+                com2 = f2.textBox10.Text;
+            else
+                com2 = "NULL";
+
             string insert_guestInfo = "insert into guestInfo values ('" + f2.textBox2.Text + "','" + f2.textBox1.Text + "','" 
                                     + f2.comboBox1.Text + "','" + f2.textBox8.Text + "')";
-            string insert_record = "insert into record (dnum, rnum, id, indate, type, price, pledge) values('" 
+            string insert_record = "insert into record (dnum, rnum, id, indate, type, price, pledge, companion1Id, companion2Id) values('"
                                     + label9.Text + "','" + label5.Text + "','" + f2.textBox2.Text + "','" + DateTime.Now.ToString("yyyy-MM-dd")
-                                    + "','" + f2.comboBox2.Text + "'," + (Convert.ToInt32(f2.textBox6.Text) * 2).ToString() + "," + f2.textBox7.Text + ")";
+                                    + "','" + f2.comboBox2.Text + "'," + (Convert.ToInt32(f2.textBox6.Text) * 2).ToString() + "," + f2.textBox7.Text +
+                                    "," + com1 + "," + com2 + ")";
             string update_roomInfo = "update roomInfo set state=2 where rnum = " + label5.Text;
 
             SqlCommand cmd1 = new SqlCommand(insert_guestInfo, HotelCon);

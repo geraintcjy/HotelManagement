@@ -196,5 +196,18 @@ namespace 酒店信息管理系统
         {
             Close();
         }
+
+        private void 客房设置ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (Program.currentId == "")
+                MessageBox.Show("请先登录", "提示");
+            else
+            {
+                this.panel1.Controls.Clear();
+                Form6_roomset1 form61 = new Form6_roomset1 { TopLevel = false, FormBorderStyle = FormBorderStyle.None };
+                this.panel1.Controls.Add(form61);
+                form61.Show();
+            }
+        }
     }
 }

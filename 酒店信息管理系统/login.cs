@@ -40,6 +40,7 @@ namespace 酒店信息管理系统
             }
             if (correct)
             {
+                
                 MessageBox.Show("登录成功", "提示");
                 DialogResult = DialogResult.OK;
                 Close();

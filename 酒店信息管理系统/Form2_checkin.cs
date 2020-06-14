@@ -74,10 +74,10 @@ namespace 酒店信息管理系统
                 return;
             }
             roomInfo ri = new roomInfo();
-            if (!ri.roomStatus.ContainsKey(textBox3.Text))
+            if (!ri.roomStatus[textBox3.Text])
             {
                 MessageBox.Show("输入的房号有误或房间不可用","警告");
-                clearAll();
+                textBox3.Text = "";
                 return;
             }
             checkinConfirm cc = new checkinConfirm(this);
@@ -103,7 +103,7 @@ namespace 酒店信息管理系统
 
         private void button3_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Close();
         }
 
         private void button4_Click(object sender, EventArgs e)

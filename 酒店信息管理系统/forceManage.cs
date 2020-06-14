@@ -32,5 +32,10 @@ namespace 酒店信息管理系统
             MessageBox.Show("已完成", "成功");
             textBox1.Text = comboBox1.Text = "";
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }
