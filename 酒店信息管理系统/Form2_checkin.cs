@@ -14,7 +14,7 @@ namespace 酒店信息管理系统
     public partial class Form2_checkin : Form
     {
         //写placeholder!!!
-        static string con = @"Data Source=.\sqlexpress;Initial Catalog=Hotel;Integrated Security=True";
+        static string con = Program.connect;
         SqlConnection HotelCon = new SqlConnection(con);
         DataSet dataset = new DataSet();
 
@@ -26,8 +26,14 @@ namespace 酒店信息管理系统
                     C.Text = "";
                 else if (C is GroupBox)
                     foreach (Control C1 in C.Controls)
+                    {
                         if (C1 is ComboBox || C1 is TextBox)
                             C1.Text = "";
+                        else if (C1 is GroupBox)
+                            foreach (Control C2 in C1.Controls)
+                                if (C2 is ComboBox || C2 is TextBox)
+                                    C2.Text = "";
+                    }
             }
         }
         public Form2_checkin()
@@ -92,7 +98,7 @@ namespace 酒店信息管理系统
                 MessageBox.Show("请输入房间单价", "警告");
             else
             {
-                textBox6.Text = (Convert.ToInt32(textBox5.Text) * Convert.ToInt32(textBox4.Text) / 2).ToString();
+                textBox6.Text = (Convert.ToInt32(textBox5.Text) * Convert.ToInt32(textBox4.Text) * 2).ToString();
             }
         }
 
@@ -110,6 +116,11 @@ namespace 酒店信息管理系统
         {
             roomInfo r = new roomInfo();
             r.Show();
+        }
+
+        private void groupBox1_Paint(object sender, PaintEventArgs e)
+        {
+            //e.Graphics.Clear(this.BackColor);   
         }
     }
 }

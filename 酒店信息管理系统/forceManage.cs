@@ -13,7 +13,7 @@ namespace 酒店信息管理系统
 {
     public partial class forceManage : Form
     {
-        static string con = @"Data Source=.\sqlexpress;Initial Catalog=Hotel;Integrated Security=True";
+        static string con = Program.connect;
         SqlConnection HotelCon = new SqlConnection(con);
         DataSet dataset = new DataSet();
 

@@ -14,10 +14,11 @@ namespace 酒店信息管理系统
 {
     public partial class checkinConfirm : Form
     {
-        static string con = @"Data Source=.\sqlexpress;Initial Catalog=Hotel;Integrated Security=True";
+        static string con = Program.connect;
         SqlConnection HotelCon = new SqlConnection(con);
         DataSet dataset = new DataSet();
 
+        //生成订单号
         public string generateDnum()
         {
             string date = DateTime.Now.ToString("yyyy-MM-dd");
@@ -66,33 +67,35 @@ namespace 酒店信息管理系统
             label2.Text = f2.textBox1.Text;
             label3.Text = f2.textBox2.Text;
             label5.Text = f2.textBox3.Text;
-            label7.Text = f2.textBox7.Text;
+            int cost = Convert.ToInt32(f2.textBox4.Text) * Convert.ToInt32(f2.textBox5.Text);
+            label7.Text = cost.ToString();
+            label11.Text = (Convert.ToInt32(f2.textBox7.Text) - cost).ToString();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Close();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             string com1, com2;
             if (f2.textBox9.Text != "")
-                com1 = f2.textBox10.Text;
+                com1 = "'" + f2.textBox9.Text + "'";
             else
                 com1 = "NULL";
             if (f2.textBox10.Text != "")
-                com2 = f2.textBox10.Text;
+                com2 = "'" + f2.textBox10.Text + "'";
             else
                 com2 = "NULL";
 
             string insert_guestInfo = "insert into guestInfo values ('" + f2.textBox2.Text + "','" + f2.textBox1.Text + "','" 
                                     + f2.comboBox1.Text + "','" + f2.textBox8.Text + "')";
-            string insert_record = "insert into record (dnum, rnum, id, indate, type, price, pledge, companion1Id, companion2Id) values('"
+            insert_guestInfo = "if not exists (select 1 from guestInfo where id='"+f2.textBox2.Text+"') " + insert_guestInfo;
+            string insert_record = "insert into record (dnum, rnum, id, indate,outdate, days, price, pledge, companion1Id, companion2Id) values('"
                                     + label9.Text + "','" + label5.Text + "','" + f2.textBox2.Text + "','" + DateTime.Now.ToString("yyyy-MM-dd")
-                                    + "','" + f2.comboBox2.Text + "'," + (Convert.ToInt32(f2.textBox6.Text) * 2).ToString() + "," + f2.textBox7.Text +
-                                    "," + com1 + "," + com2 + ")";
-            string update_roomInfo = "update roomInfo set state=2 where rnum = " + label5.Text;
+                                    + "',NULL," + f2.textBox5.Text + "," + label7.Text + "," + label11.Text + "," + com1 + "," + com2 + ")";
+            string update_roomInfo = "update roomInfo set state = 2 where rnum = " + label5.Text;
 
             SqlCommand cmd1 = new SqlCommand(insert_guestInfo, HotelCon);
             SqlCommand cmd2 = new SqlCommand(insert_record, HotelCon);
@@ -100,6 +103,7 @@ namespace 酒店信息管理系统
 
             HotelCon.Open();
 
+            bool anomaly = false;
             try
             {
                 cmd1.ExecuteNonQuery();
@@ -108,12 +112,13 @@ namespace 酒店信息管理系统
             }
             catch (Exception ex)
             {
-                //MessageBox.Show(ex.ToString(), "警告");
+                anomaly = true;
+                MessageBox.Show(ex.ToString(), "警告");
             }
+            if (!anomaly)
+                MessageBox.Show("已完成", "成功");
 
             HotelCon.Close();
-
-            MessageBox.Show("已完成", "成功");
             Close();
         }
     }

@@ -13,39 +13,75 @@ namespace 酒店信息管理系统
 {
     public partial class adminLogin : Form
     {
-        static string con = @"Data Source=.\sqlexpress;Initial Catalog=Hotel;Integrated Security=True";
+        int sta;
+        static string con = Program.connect;
         SqlConnection HotelCon = new SqlConnection(con);
         DataSet dataset = new DataSet();
 
-        public adminLogin()
+        public adminLogin(int status)
         {
             InitializeComponent();
+            sta = status;
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            bool flag = false;
-            for (int i=0;i< dataset.Tables["employee"].Rows.Count; i++)
+            if (sta == 1)//修改房价状态时的验证
             {
-                string username = dataset.Tables["employee"].Rows[i][2].ToString().Trim();
-                string password = dataset.Tables["employee"].Rows[i][3].ToString().Trim();
-                string position = dataset.Tables["employee"].Rows[i][1].ToString().Trim();
-                if (textBox1.Text == username && textBox2.Text == password && (position == "总经理" || position == "管理员")) 
+                bool flag = false;
+                for (int i = 0; i < dataset.Tables["employee"].Rows.Count; i++)
                 {
-                    flag = true;
-                    forceManage fm = new forceManage { TopLevel = false, FormBorderStyle = FormBorderStyle.None };
-                    Form_home fh = (Form_home)this.Owner;
-                    fh.panel1.Controls.Clear();
-                    fh.panel1.Controls.Add(fm);
-                    fm.Show();
-                    Close();
-                    break;
+                    string username = dataset.Tables["employee"].Rows[i][2].ToString().Trim();
+                    string password = dataset.Tables["employee"].Rows[i][3].ToString().Trim();
+                    string position = dataset.Tables["employee"].Rows[i][1].ToString().Trim();
+                    if (textBox1.Text == username && textBox2.Text == password && (position == "总经理" || position == "管理员"))
+                    {
+                        flag = true;
+                        forceManage fm = new forceManage { TopLevel = false, FormBorderStyle = FormBorderStyle.None };
+                        Form_home fh = (Form_home)Owner;
+                        fh.BackgroundImage = Properties.Resources.big;
+                        fh.panel1.Controls.Clear();
+                        fh.panel1.Controls.Add(fm);
+                        fh.changestyle();
+                        fm.Show();
+                        Close();
+                        break;
+                    }
+                }
+                if (!flag)
+                {
+                    MessageBox.Show("账号或密码错误", "警告");
+                    textBox1.Text = textBox2.Text = "";
                 }
             }
-            if (!flag)
+
+            if (sta == 2) //修改密码时的验证
             {
-                MessageBox.Show("账号或密码错误", "警告");
-                textBox1.Text = textBox2.Text = "";
+                bool flag = false;
+                for (int i = 0; i < dataset.Tables["employee"].Rows.Count; i++)
+                {
+                    string username = dataset.Tables["employee"].Rows[i][2].ToString().Trim();
+                    string password = dataset.Tables["employee"].Rows[i][3].ToString().Trim();
+                    string position = dataset.Tables["employee"].Rows[i][1].ToString().Trim();
+                    if (textBox1.Text == username && textBox2.Text == password && (position == "总经理" || position == "管理员"))
+                    {
+                        flag = true;
+                        changePassword cp = new changePassword { TopLevel = false, FormBorderStyle = FormBorderStyle.None };
+                        Form_home fh = (Form_home)Owner.Owner;
+                        fh.panel1.Controls.Clear();
+                        fh.panel1.Controls.Add(cp);
+                        fh.BackgroundImage = Properties.Resources.big;
+                        fh.changestyle();
+                        cp.Show();
+                        Close();
+                        break;
+                    }
+                }
+                if (!flag)
+                {
+                    MessageBox.Show("账号或密码错误", "警告");
+                    textBox1.Text = textBox2.Text = "";
+                }
             }
         }
 

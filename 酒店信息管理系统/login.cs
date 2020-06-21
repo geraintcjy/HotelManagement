@@ -16,7 +16,7 @@ namespace 酒店信息管理系统
         public string currentId = "";
         public bool status = false;
 
-        static string con = @"Data Source=.\sqlexpress;Initial Catalog=Hotel;Integrated Security=True";
+        static string con = Program.connect;
         SqlConnection HotelCon = new SqlConnection(con);
         DataSet dataset = new DataSet();
 
@@ -67,6 +67,28 @@ namespace 酒店信息管理系统
             {
                 Program.currentId = currentId;
             }
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+            Close();
+            adminLogin am = new adminLogin(2);
+            am.ShowDialog(this);
+        }
+
+        private void label4_MouseEnter(object sender, EventArgs e)
+        {
+            Cursor = Cursors.Hand;
+        }
+
+        private void label4_MouseLeave(object sender, EventArgs e)
+        {
+            Cursor = Cursors.Default;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

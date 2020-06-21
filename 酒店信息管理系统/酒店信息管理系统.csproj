@@ -32,8 +32,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CSkin">
+      <HintPath>..\..\CSkin 16.1.14.3\CSkin 4.0\CSkin.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -49,6 +53,12 @@
     </Compile>
     <Compile Include="adminLogin.Designer.cs">
       <DependentUpon>adminLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="changePassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="changePassword.Designer.cs">
+      <DependentUpon>changePassword.cs</DependentUpon>
     </Compile>
     <Compile Include="checkinConfirm.cs">
       <SubType>Form</SubType>
@@ -86,17 +96,17 @@
     <Compile Include="Form5_query2.Designer.cs">
       <DependentUpon>Form5_query2.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form5_query3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form5_query3.Designer.cs">
+      <DependentUpon>Form5_query3.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form6_roomset1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form6_roomset1.Designer.cs">
       <DependentUpon>Form6_roomset1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Form6_roomset2.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form6_roomset2.Designer.cs">
-      <DependentUpon>Form6_roomset2.cs</DependentUpon>
     </Compile>
     <Compile Include="Form7_close.cs">
       <SubType>Form</SubType>
@@ -109,6 +119,18 @@
     </Compile>
     <Compile Include="Form5_query1.Designer.cs">
       <DependentUpon>Form5_query1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form8_addservice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form8_addservice.Designer.cs">
+      <DependentUpon>Form8_addservice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form8_getservice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form8_getservice.Designer.cs">
+      <DependentUpon>Form8_getservice.cs</DependentUpon>
     </Compile>
     <Compile Include="Form_home.cs">
       <SubType>Form</SubType>
@@ -136,6 +158,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="roomInfo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -144,6 +171,9 @@
     </Compile>
     <EmbeddedResource Include="adminLogin.resx">
       <DependentUpon>adminLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="changePassword.resx">
+      <DependentUpon>changePassword.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="checkinConfirm.resx">
       <DependentUpon>checkinConfirm.cs</DependentUpon>
@@ -169,11 +199,17 @@
     <EmbeddedResource Include="Form5_query2.resx">
       <DependentUpon>Form5_query2.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Form5_query3.resx">
+      <DependentUpon>Form5_query3.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form6_roomset1.resx">
       <DependentUpon>Form6_roomset1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form6_roomset2.resx">
-      <DependentUpon>Form6_roomset2.cs</DependentUpon>
+    <EmbeddedResource Include="Form8_addservice.resx">
+      <DependentUpon>Form8_addservice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form8_getservice.resx">
+      <DependentUpon>Form8_getservice.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form_home.resx">
       <DependentUpon>Form_home.cs</DependentUpon>
@@ -186,13 +222,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="roomInfo.resx">
       <DependentUpon>roomInfo.cs</DependentUpon>
     </EmbeddedResource>
@@ -208,6 +240,29 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\Debug\登录界面.jpg" />
+    <Content Include="bin\Debug\退房背景.jpg" />
+    <None Include="Resources\5.jpg" />
+    <None Include="Resources\4.jpg" />
+    <None Include="Resources\3.jpg" />
+    <None Include="Resources\2.jpg" />
+    <None Include="Resources\1.jpg" />
+    <None Include="Resources\logo.jpg" />
+    <None Include="Resources\banner2.jpg" />
+    <None Include="Resources\banner1.jpg" />
+    <None Include="Resources\banner.jpg" />
+    <None Include="Resources\logo_original.jpg" />
+    <None Include="Resources\logo.png" />
+    <None Include="Resources\logo.ico" />
+    <None Include="Resources\small4.jpg" />
+    <None Include="Resources\small3.jpg" />
+    <None Include="Resources\small2.jpg" />
+    <None Include="Resources\big.jpg" />
+    <None Include="Resources\big.bmp" />
+    <None Include="Resources\small.jpg" />
+    <None Include="Resources\timg2.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

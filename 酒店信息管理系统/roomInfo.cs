@@ -13,8 +13,8 @@ namespace 酒店信息管理系统
 {
     public partial class roomInfo : Form
     {
+        static string con = Program.connect;
         public Dictionary<string, bool> roomStatus = new Dictionary<string, bool>();//记录房间状态
-        static string con = @"Data Source=.\sqlexpress;Initial Catalog=Hotel;Integrated Security=True";
         SqlConnection HotelCon = new SqlConnection(con);
         DataSet dataset = new DataSet();
         public roomInfo()

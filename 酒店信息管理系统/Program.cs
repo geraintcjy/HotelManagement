@@ -20,5 +20,7 @@ namespace 酒店信息管理系统
         }
 
         public static string currentId = "";
+        public static string connect =@"Data Source=.;Initial Catalog=Hotel;Integrated Security=True";
+        //public static string connect = @"Data Source=.\sqlexpress;Initial Catalog=Hotel;Integrated Security=True";
     }
 }

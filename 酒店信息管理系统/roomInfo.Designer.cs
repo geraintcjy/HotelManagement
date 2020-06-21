@@ -29,6 +29,7 @@ namespace 酒店信息管理系统
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(roomInfo));
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.按房型查找ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -43,11 +44,12 @@ namespace 酒店信息管理系统
             // 
             // dataGridView1
             // 
+            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(49, 81);
+            this.dataGridView1.Location = new System.Drawing.Point(69, 75);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 23;
-            this.dataGridView1.Size = new System.Drawing.Size(408, 309);
+            this.dataGridView1.Size = new System.Drawing.Size(421, 224);
             this.dataGridView1.TabIndex = 0;
             // 
             // menuStrip1
@@ -57,7 +59,7 @@ namespace 酒店信息管理系统
             this.返回ToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(511, 25);
+            this.menuStrip1.Size = new System.Drawing.Size(571, 25);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -111,11 +113,14 @@ namespace 酒店信息管理系统
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(511, 450);
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(571, 359);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.menuStrip1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "roomInfo";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "房间信息";
             this.Load += new System.EventHandler(this.roomInfo_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

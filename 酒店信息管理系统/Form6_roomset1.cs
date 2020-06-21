@@ -17,8 +17,8 @@ namespace 酒店信息管理系统
         {
             InitializeComponent();
         }
-        static string con = @"Data Source=.\sqlexpress;Initial Catalog=Hotel;Integrated Security=True";
-        //static string con = @"Data Source=.;Initial Catalog=Hotel;Integrated Security=True";
+
+        static string con = Program.connect;
         SqlConnection connect = new SqlConnection(con);
         static bool uptate;
 
@@ -30,6 +30,7 @@ namespace 酒店信息管理系统
             DataTable table_room = new DataTable();
             adapter.Fill(table_room);
             dataGridView1.DataSource = table_room;
+            button_delete.Visible = true;
         }
 
         private void button_alter_Click(object sender, EventArgs e)
@@ -38,7 +39,7 @@ namespace 酒店信息管理系统
             groupBox1.Text = "修改房间信息";
             button_OK.Text = "确认修改";
             textBox_rnum.Text = dataGridView1.CurrentCell.Value.ToString();
-
+            button_delete.Visible = true;
         }
 
         private void button_insert_Click(object sender, EventArgs e)
@@ -48,18 +49,22 @@ namespace 酒店信息管理系统
             button_OK.Text = "确认增添";
             textBox_rnum.Clear();
             textBox_price.Clear();
-
+            textBox_type.Clear();
+            button_delete.Visible = false;
         }
 
         private void dataGridView1_SelectionChanged(object sender, EventArgs e)
         {
             uptate = true;
-            groupBox1.Text = "修改房型信息";
+            groupBox1.Text = "修改房间信息";
             button_OK.Text = "确认修改";
-            int i = dataGridView1.CurrentRow.Index;
-            textBox_rnum.Text = dataGridView1.Rows[i].Cells[0].Value.ToString();
-            textBox_type.Text = dataGridView1.Rows[i].Cells[1].Value.ToString();
-            textBox_price.Text = dataGridView1.Rows[i].Cells[2].Value.ToString();
+            if (dataGridView1.CurrentRow != null)
+            {
+                int i = dataGridView1.CurrentRow.Index;
+                textBox_rnum.Text = dataGridView1.Rows[i].Cells[0].Value.ToString();
+                textBox_type.Text = dataGridView1.Rows[i].Cells[1].Value.ToString();
+                textBox_price.Text = dataGridView1.Rows[i].Cells[2].Value.ToString();
+            }
         }
 
         private void button_OK_Click(object sender, EventArgs e)
@@ -103,12 +108,46 @@ namespace 酒店信息管理系统
                 }
                 connect.Close();
             }
-            //更新表格内容//
-            string str = "select rnum '房间号',type '房间类型',price '房间价格' from roominfo";
-            SqlDataAdapter adapter1 = new SqlDataAdapter(str, connect);
-            DataTable table_room = new DataTable();
-            adapter1.Fill(table_room);
-            dataGridView1.DataSource = table_room;
+            Form6_roomset1_Load(null,null);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            DialogResult dr = MessageBox.Show("确认删除"+textBox_rnum.Text+"号房间吗", "提示", MessageBoxButtons.OKCancel); 
+            if (dr == DialogResult.OK) 
+            { 
+                string str_delete = "delete from roominfo where rnum='" + textBox_rnum.Text + "'";
+                SqlCommand cmd_update = new SqlCommand(str_delete, connect);
+                connect.Open();
+                {
+                    try
+                    {
+                        cmd_update.ExecuteNonQuery();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.ToString());
+                    }
+                }
+                connect.Close();
+                Form6_roomset1_Load(null, null);
+            }
+            else if (dr == DialogResult.Cancel)
+            {
+                MessageBox.Show("已取消删除！");
+            }
+        }
+
+        private void button_delete_MouseEnter(object sender, EventArgs e)
+        {
+            button_delete.BackColor = Color.Red;
+            button_delete.ForeColor = Color.White;
+        }
+
+        private void button_delete_MouseLeave(object sender, EventArgs e)
+        {
+            button_delete.BackColor = Color.Transparent;
+            button_delete.ForeColor = Color.Black;
         }
     }
 }
