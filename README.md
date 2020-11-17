@@ -8,4 +8,3 @@ A hotel management system
 * An available admin account: 00001,123456
 
 Members: Jiayuan Chen, Zhenjie Mo, Xiangwei Lv
-作者：陈嘉缘，莫振杰，吕祥伟
